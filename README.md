@@ -25,10 +25,13 @@ The library needs to be configured with your account's secret key value:
 ``` ruby
 require 'circuit'
 
-Circuit.api_client_id = 'client id'
-Circuit.api_client_secret = 'client secret'
-Circuit.sandbox = true
-Circuit.bearer_token = 'bearer token'
+Circuit::Client.new(
+    client_id: 'client id',
+    client_secret: 'client secret',
+    sandbox: true
+)
+
+client.connect('oauth token')
 ```
 
 ## Usage
@@ -36,7 +39,7 @@ Circuit.bearer_token = 'bearer token'
 Query for the list of webhooks:
 
 ```ruby
-webhooks =  Circuit::Resources::Webhooks.all
+webhooks =  client.webhooks.all
 webhooks.first.id
 ```
 
