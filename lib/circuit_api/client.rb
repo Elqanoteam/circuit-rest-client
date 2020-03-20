@@ -5,7 +5,7 @@ module CircuitApi
     def initialize(client_id: nil, client_secret: nil, sandbox: nil)
       @client_id = client_id
       @client_secret = client_secret
-      @sand_box = sandbox
+      @sandbox = sandbox
     end
 
     def connect(token)
