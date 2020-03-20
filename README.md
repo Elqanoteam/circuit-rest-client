@@ -15,7 +15,7 @@ Ruby 2.0+.
 ``` ruby
 source 'https://rubygems.org'
 
-gem 'circuit'
+gem 'circuit-api'
 ```
 
 ### Configuration
