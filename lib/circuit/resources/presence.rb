@@ -6,7 +6,7 @@ module Circuit
           'users'
         end
 
-        def update
+        def update(params)
           result = Circuit::Utils::Connection.new(
             "#{api_resource}/presence",
             Circuit::Utils::Attributes.camelize_keys(params)
@@ -22,10 +22,9 @@ module Circuit
           response_to_object(result)
         end
 
-        def find(id)
+        def find(user_id)
           result = Circuit::Utils::Connection.new(
-            "#{api_resource}/#{id}/presence",
-            Circuit::Utils::Attributes.camelize_keys(params)
+            "#{api_resource}/#{user_id}/presence"
           ).get
           response_to_object(result)
         end
