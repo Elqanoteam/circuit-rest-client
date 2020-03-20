@@ -8,8 +8,7 @@ module Circuit
 
         def profile
           result = Circuit::Utils::Connection.new(
-            "#{api_resource}/profile",
-            Circuit::Utils::Attributes.camelize_keys(params)
+            "#{api_resource}/profile"
           ).get
           response_to_object(result)
         end

@@ -10,6 +10,11 @@ require 'circuit/utils/attributes'
 require 'circuit/utils/object'
 
 require 'circuit/resources/base'
+require 'circuit/resources/conversation'
+require 'circuit/resources/label'
+require 'circuit/resources/presence'
+require 'circuit/resources/session'
+require 'circuit/resources/user'
 require 'circuit/resources/webhook'
 
 module Circuit

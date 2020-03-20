@@ -16,7 +16,7 @@ describe Circuit do
   end
 
   describe '.api_url' do
-    it { expect(described_class.api_url).to eq(URI('https://www.circuit.com/rest/v2')) }
+    it { expect(described_class.api_url).to eq(URI('https://www.circuit.com/rest/v2/')) }
 
     context 'when in sandbox' do
       around do |example|
@@ -25,7 +25,7 @@ describe Circuit do
         Circuit.sandbox = false
       end
 
-      it { expect(described_class.api_url).to eq(URI('https://circuitsandbox.net/rest/v2')) }
+      it { expect(described_class.api_url).to eq(URI('https://circuitsandbox.net/rest/v2/')) }
     end
   end
 end
