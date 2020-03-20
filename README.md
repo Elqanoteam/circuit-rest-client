@@ -1,4 +1,6 @@
-# Circuit RESP API Ruby client
+# Circuit REST API Ruby client
+
+Wrapper of the Circuit Rest API
 
 ## Circuit Documentation
 
@@ -6,13 +8,9 @@ See the [circuit documentation](https://circuit.github.io/).
 
 ### Requirements
 
-* Ruby 2.0+.
+Ruby 2.0+.
 
 ### Bundler
-
-If you are installing via bundler, you should be sure to use the https rubygems
-source in your Gemfile, as any gems fetched over http could potentially be
-compromised in transit and alter the code of gems fetched securely over https:
 
 ``` ruby
 source 'https://rubygems.org'
