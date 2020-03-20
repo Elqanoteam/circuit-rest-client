@@ -1,0 +1,13 @@
+{
+  "id": "8b637a4d-75e3-445a-88ea-01979d4008ef",
+  "url": "https://test/webhooks/circuit",
+  "filter": [
+    "CONVERSATION.CREATE",
+    "CONVERSATION.UPDATE",
+    "CONVERSATION.ADD_ITEM",
+    "CONVERSATION.UPDATE_ITEM"
+  ],
+  "creationTime": 1584622990411,
+  "type": "MANUAL",
+  "userId": "d8c17f9d-df42-4045-91b5-160c108e86e7"
+}
