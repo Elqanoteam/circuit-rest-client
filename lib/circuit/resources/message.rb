@@ -1,15 +1,15 @@
 module Circuit
   module Resources
-    class Conversation < Base
+    class Message < Base
       class << self
         def api_resource
-          'conversations'
+          'conversations/:id/message'
         end
 
-        def create_direct(participant)
+        def create(conversation_id, params)
           result = Circuit::Utils::Connection.new(
-            "#{api_resource}/direct",
-            Circuit::Utils::Attributes.camelize_keys(participant: participant)
+            api_resource.sub(':id', conversation_id),
+            Circuit::Utils::Attributes.camelize_keys(params)
           ).post
           response_to_object(result)
         end
