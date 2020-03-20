@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 describe Circuit::Resources::User do
+  subject(:resource) { described_class.new(client) }
+  let(:client) { Circuit::Client.new }
+
   describe '.all' do
     it 'retrieves the list of users' do
-      result = Circuit::Resources::User.all
+      result = resource.all
 
       expect(result.count).to eq(1)
 
@@ -22,7 +25,7 @@ describe Circuit::Resources::User do
 
   describe '.search' do
     it 'retrieves the list of users' do
-      result = Circuit::Resources::User.search(name: ['bot@test.com'])
+      result = resource.search(name: ['bot@test.com'])
 
       expect(result.count).to eq(1)
 
@@ -41,7 +44,7 @@ describe Circuit::Resources::User do
 
   describe '.profile' do
     it 'retrieves the list of users' do
-      user = Circuit::Resources::User.profile
+      user = resource.profile
 
       expect(user.user_id).to eq('2031b5d9-a391-4004-b6a7-d26bea128e51')
       expect(user.avatar).to eq('a76302a9-aa2a-421f-b061-b2052f2047a5')
@@ -57,7 +60,7 @@ describe Circuit::Resources::User do
 
   describe '.update_profile' do
     it 'retrieves the list of users' do
-      user = Circuit::Resources::User.update_profile(
+      user = resource.update_profile(
         locale: 'EN_US'
       )
 
@@ -75,7 +78,7 @@ describe Circuit::Resources::User do
 
   describe '.find' do
     it 'retrieves the list of users' do
-      user = Circuit::Resources::User.find('2031b5d9-a391-4004-b6a7-d26bea128e51')
+      user = resource.find('2031b5d9-a391-4004-b6a7-d26bea128e51')
 
       expect(user.user_id).to eq('2031b5d9-a391-4004-b6a7-d26bea128e51')
       expect(user.avatar).to eq('a76302a9-aa2a-421f-b061-b2052f2047a5')
@@ -91,7 +94,7 @@ describe Circuit::Resources::User do
 
   describe '.find_by_email' do
     it 'retrieves the list of users' do
-      user = Circuit::Resources::User.find_by_email('bot@test.com')
+      user = resource.find_by_email('bot@test.com')
 
       expect(user.user_id).to eq('2031b5d9-a391-4004-b6a7-d26bea128e51')
       expect(user.avatar).to eq('a76302a9-aa2a-421f-b061-b2052f2047a5')

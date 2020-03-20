@@ -3,9 +3,10 @@ module Circuit
     class Connection
       RESPONSE_SUCCESS_CODES = [200, 201, 202, 204].freeze
 
-      attr_reader :action_url, :body
+      attr_reader :client, :action_url, :body
 
-      def initialize(action_url, body = nil)
+      def initialize(client, action_url, body = nil)
+        @client = client
         @action_url = action_url
         @body = body
       end
@@ -28,24 +29,24 @@ module Circuit
 
       private
 
-      def client
-        @client ||= Net::HTTP.new(uri.hostname, uri.port)
+      def http_client
+        @http_client ||= Net::HTTP.new(uri.hostname, uri.port)
           .tap { |h| h.use_ssl = true }
       end
 
       def uri
-        @uri ||= URI.join(Circuit.api_url, action_url)
+        @uri ||= URI.join(client.api_url, action_url)
       end
 
       def headers
         {
-          'Authorization' => "Bearer #{Circuit.bearer_token}",
+          'Authorization' => "Bearer #{client.token}",
           'Content-Type' => 'application/json; charset=utf-8'
         }
       end
 
       def perform_query(verb)
-        response = client.send_request(
+        response = http_client.send_request(
           verb.to_s.upcase,
           uri.path,
           Circuit::Utils::Object.blank?(body) ? '' : body.to_json,

@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 describe Circuit::Resources::RtcSession do
+  subject(:resource) { described_class.new(client) }
+  let(:client) { Circuit::Client.new }
+
   describe '.all' do
     it 'retrieves the list of rtc sessions' do
-      result = Circuit::Resources::RtcSession.all
+      result = resource.all
 
       expect(result.count).to eq(1)
 

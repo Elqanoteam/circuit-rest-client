@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 describe Circuit::Resources::Webhook do
+  subject(:resource) { described_class.new(client) }
+  let(:client) { Circuit::Client.new }
+
   describe '.all' do
     it 'retrieves the list of webhooks' do
-      result = Circuit::Resources::Webhook.all
+      result = resource.all
 
       expect(result.count).to eq(1)
 
@@ -24,7 +27,7 @@ describe Circuit::Resources::Webhook do
 
   describe '.find' do
     it 'retrieves the a webhook' do
-      webhook = Circuit::Resources::Webhook.find('8b637a4d-75e3-445a-88ea-01979d4008ef')
+      webhook = resource.find('8b637a4d-75e3-445a-88ea-01979d4008ef')
 
       expect(webhook.id).to eq('8b637a4d-75e3-445a-88ea-01979d4008ef')
       expect(webhook.user_id).to eq('d8c17f9d-df42-4045-91b5-160c108e86e7')
@@ -42,7 +45,7 @@ describe Circuit::Resources::Webhook do
 
   describe '.create' do
     it 'creates a webhook' do
-      webhook = Circuit::Resources::Webhook.create(
+      webhook = resource.create(
         url: 'https://test/webhooks/circuit',
         filter: [
           'CONVERSATION.CREATE',
@@ -68,21 +71,21 @@ describe Circuit::Resources::Webhook do
 
   describe '.delete' do
     it 'deletes a webhook' do
-      response = Circuit::Resources::Webhook.delete('8b637a4d-75e3-445a-88ea-01979d4008ef')
+      response = resource.delete('8b637a4d-75e3-445a-88ea-01979d4008ef')
       expect(response).to be_nil
     end
   end
 
   describe '.delete_all' do
     it 'deletes all webhooks' do
-      response = Circuit::Resources::Webhook.delete_all
+      response = resource.delete_all
       expect(response).to be_nil
     end
   end
 
   describe '.update' do
     it 'creates a webhook' do
-      webhook = Circuit::Resources::Webhook.update(
+      webhook = resource.update(
         '8b637a4d-75e3-445a-88ea-01979d4008ef',
         url: 'https://test/webhooks/circuit',
         filter: [
@@ -109,7 +112,7 @@ describe Circuit::Resources::Webhook do
 
   describe '.create_presence' do
     it 'creates a webhook' do
-      webhook = Circuit::Resources::Webhook.create_presence(
+      webhook = resource.create_presence(
         url: 'https://test/webhooks/circuit',
         user_ids: [
           '4ba7e51c-8d5a-43a5-8f47-a96c30ad13c2',
@@ -133,7 +136,7 @@ describe Circuit::Resources::Webhook do
 
   describe '.update_presence' do
     it 'creates a webhook' do
-      webhook = Circuit::Resources::Webhook.update_presence(
+      webhook = resource.update_presence(
         '8b637a4d-75e3-445a-88ea-01979d4008ef',
         url: 'https://test/webhooks/circuit',
         user_ids: [

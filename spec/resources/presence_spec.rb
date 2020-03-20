@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 describe Circuit::Resources::Presence do
+  subject(:resource) { described_class.new(client) }
+  let(:client) { Circuit::Client.new }
+
   describe '.all' do
     it 'retrieves the list of presence' do
-      result = Circuit::Resources::Presence.all(
+      result = resource.all(
         user_ids: ['d8c17f9d-df42-4045-91b5-160c108e86e7']
       )
 
@@ -17,7 +20,7 @@ describe Circuit::Resources::Presence do
 
   describe '.find' do
     it 'retrieves the list of presence' do
-      presence = Circuit::Resources::Presence.find(
+      presence = resource.find(
         'd8c17f9d-df42-4045-91b5-160c108e86e7'
       )
 
@@ -28,7 +31,7 @@ describe Circuit::Resources::Presence do
 
   describe '.update' do
     it 'retrieves the list of presence' do
-      presence = Circuit::Resources::Presence.update(
+      presence = resource.update(
         state: 'ACTIVE'
       )
 

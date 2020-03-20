@@ -3,6 +3,8 @@ require 'uri'
 require 'json'
 
 require 'circuit/version'
+require 'circuit/client'
+require 'circuit/resource'
 
 require 'circuit/utils/connection'
 require 'circuit/utils/errors'
@@ -24,16 +26,6 @@ module Circuit
   API_PATH_BASE = 'rest/v2/'.freeze
 
   class << self
-    attr_accessor :api_client_id, :api_client_secret, :sandbox, :bearer_token, :logger
-
-    def base_url
-      return API_SANDBOX_BASE_URL if sandbox
-
-      API_BASE_URL
-    end
-
-    def api_url
-      URI.join(base_url, API_PATH_BASE)
-    end
+    attr_accessor :logger
   end
 end
