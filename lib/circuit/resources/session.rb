@@ -8,8 +8,7 @@ module Circuit
 
         def all
           result = Circuit::Utils::Connection.new(
-            api_resource,
-            Circuit::Utils::Attributes.camelize_keys(params)
+            api_resource
           ).get
           response_to_object(result)
         end
