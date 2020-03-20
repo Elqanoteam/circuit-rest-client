@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   module Utils
     module Attributes
       def self.snake_keys(value)

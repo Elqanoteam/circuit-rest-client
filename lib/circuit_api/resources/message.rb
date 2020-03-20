@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   module Resources
     class Message < Base
       def api_resource

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Circuit::Client do
+describe CircuitApi::Client do
   subject(:client) do
     described_class.new(
       client_id: '123456',

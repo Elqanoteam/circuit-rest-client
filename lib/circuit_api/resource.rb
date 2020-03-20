@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   class Resource
     attr_reader :circuit_resource_type
 

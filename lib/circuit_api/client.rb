@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   class Client
     attr_accessor :client_id, :client_secret, :sandbox, :token
 
@@ -14,41 +14,41 @@ module Circuit
     end
 
     def base_url
-      return Circuit::API_SANDBOX_BASE_URL if sandbox
+      return CircuitApi::API_SANDBOX_BASE_URL if sandbox
 
-      Circuit::API_BASE_URL
+      CircuitApi::API_BASE_URL
     end
 
     def api_url
-      URI.join(base_url, Circuit::API_PATH_BASE)
+      URI.join(base_url, CircuitApi::API_PATH_BASE)
     end
 
     def conversations
-      Circuit::Resources::Conversation.new(self)
+      CircuitApi::Resources::Conversation.new(self)
     end
 
     def labels
-      Circuit::Resources::Label.new(self)
+      CircuitApi::Resources::Label.new(self)
     end
 
     def messages
-      Circuit::Resources::Message.new(self)
+      CircuitApi::Resources::Message.new(self)
     end
 
     def presence
-      Circuit::Resources::Presence.new(self)
+      CircuitApi::Resources::Presence.new(self)
     end
 
     def rtc_sessions
-      Circuit::Resources::RtcSession.new(self)
+      CircuitApi::Resources::RtcSession.new(self)
     end
 
     def users
-      Circuit::Resources::User.new(self)
+      CircuitApi::Resources::User.new(self)
     end
 
     def webhooks
-      Circuit::Resources::Webhook.new(self)
+      CircuitApi::Resources::Webhook.new(self)
     end
   end
 end

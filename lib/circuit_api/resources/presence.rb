@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   module Resources
     class Presence < Base
       def api_resource

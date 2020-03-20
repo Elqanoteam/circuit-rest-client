@@ -1,10 +1,10 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
 
-require 'circuit/version'
+require 'circuit_api/version'
 
 Gem::Specification.new do |s|
   s.name        = 'circuit-api'
-  s.version     = Circuit::VERSION
+  s.version     = CircuitApi::VERSION
   s.date        = '2020-03-20'
   s.summary     = 'Circuit Rest API client'
   s.description = 'Wrapper of the Circuit Rest API'

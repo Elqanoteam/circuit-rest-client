@@ -1,7 +1,7 @@
 require 'bundler/setup'
 Bundler.setup
 
-require 'circuit'
+require 'circuit_api'
 require 'webmock/rspec'
 require 'sinatra'
 require 'pry'

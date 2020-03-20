@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   module Resources
     class Base
       attr_reader :client
@@ -44,17 +44,17 @@ module Circuit
       protected
 
       def connection(resource_path, params = {})
-        Circuit::Utils::Connection.new(
+        CircuitApi::Utils::Connection.new(
           client,
           resource_path,
-          Circuit::Utils::Attributes.camelize_keys(params)
+          CircuitApi::Utils::Attributes.camelize_keys(params)
         )
       end
 
       def response_to_object(response)
         case response
         when Hash
-          return nil if Circuit::Utils::Object.blank?(response)
+          return nil if CircuitApi::Utils::Object.blank?(response)
           to_object(response)
         when Array
           response.map do |item|
@@ -64,9 +64,9 @@ module Circuit
       end
 
       def to_object(values)
-        attributes = Circuit::Utils::Attributes.snake_keys(values)
+        attributes = CircuitApi::Utils::Attributes.snake_keys(values)
         #binding.pry
-        Circuit::Resource.new('foo', attributes)
+        CircuitApi::Resource.new('foo', attributes)
       end
     end
   end

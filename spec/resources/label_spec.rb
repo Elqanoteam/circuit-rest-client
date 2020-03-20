@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Circuit::Resources::Label do
+describe CircuitApi::Resources::Label do
   subject(:resource) { described_class.new(client) }
-  let(:client) { Circuit::Client.new }
+  let(:client) { CircuitApi::Client.new }
 
   describe '.all' do
     it 'retrieves the list of labels of the user' do

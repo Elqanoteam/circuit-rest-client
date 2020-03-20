@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Circuit::Utils::Attributes do
+describe CircuitApi::Utils::Attributes do
   subject(:attributes) { described_class }
 
   describe '.snake_keys' do

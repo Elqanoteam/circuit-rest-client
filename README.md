@@ -23,9 +23,9 @@ gem 'circuit-api'
 The library needs to be configured with your account's secret key value:
 
 ``` ruby
-require 'circuit'
+require 'circuit_api'
 
-Circuit::Client.new(
+CircuitApi::Client.new(
     client_id: 'client id',
     client_secret: 'client secret',
     sandbox: true

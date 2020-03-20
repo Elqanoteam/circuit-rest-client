@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Circuit::Resources::Conversation do
+describe CircuitApi::Resources::Conversation do
   subject(:resource) { described_class.new(client) }
-  let(:client) { Circuit::Client.new }
+  let(:client) { CircuitApi::Client.new }
 
   describe '.create_direct' do
     it 'creates a direct conversation' do

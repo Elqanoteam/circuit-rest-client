@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   module Resources
     class RtcSession < Base
       def api_resource

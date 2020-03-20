@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   module Utils
     module Object
       def self.blank?(object)

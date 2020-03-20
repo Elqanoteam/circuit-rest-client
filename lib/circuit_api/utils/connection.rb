@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   module Utils
     class Connection
       RESPONSE_SUCCESS_CODES = [200, 201, 202, 204].freeze
@@ -49,27 +49,27 @@ module Circuit
         response = http_client.send_request(
           verb.to_s.upcase,
           uri.path,
-          Circuit::Utils::Object.blank?(body) ? '' : body.to_json,
+          CircuitApi::Utils::Object.blank?(body) ? '' : body.to_json,
           headers
         )
 
         raise_error(response) unless RESPONSE_SUCCESS_CODES.include?(response.code.to_i)
 
-        Circuit::Utils::Object.blank?(response.body) ? {} : JSON.parse(response.body)
+        CircuitApi::Utils::Object.blank?(response.body) ? {} : JSON.parse(response.body)
       end
 
       def raise_error(response)
         error_class = case response.code.to_i
         when 400
-          Circuit::BadRequest
+          CircuitApi::BadRequest
         when 401
-          Circuit::Unauthorized
+          CircuitApi::Unauthorized
         when 500
-          Circuit::InternalServerError
+          CircuitApi::InternalServerError
         when 503
-          Circuit::ServiceUnavailable
+          CircuitApi::ServiceUnavailable
         else
-          Circuit::HttpError
+          CircuitApi::HttpError
         end
 
         raise error_class.new(response.code, response.body)

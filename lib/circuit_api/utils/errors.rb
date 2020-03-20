@@ -1,4 +1,4 @@
-module Circuit
+module CircuitApi
   class HttpError < StandardError
     attr_reader :error_code, :error_body
 
