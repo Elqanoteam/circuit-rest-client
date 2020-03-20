@@ -13,7 +13,7 @@ require 'circuit/resources/base'
 require 'circuit/resources/conversation'
 require 'circuit/resources/label'
 require 'circuit/resources/presence'
-require 'circuit/resources/session'
+require 'circuit/resources/rtc_session'
 require 'circuit/resources/user'
 require 'circuit/resources/webhook'
 

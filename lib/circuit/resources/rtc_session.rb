@@ -1,6 +1,6 @@
 module Circuit
   module Resources
-    class Session < Base
+    class RtcSession < Base
       class << self
         def api_resource
           'rtc/sessions'

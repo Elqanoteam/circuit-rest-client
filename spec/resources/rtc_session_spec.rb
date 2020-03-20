@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Circuit::Resources::Session do
+describe Circuit::Resources::RtcSession do
   describe '.all' do
     it 'retrieves the list of rtc sessions' do
-      result = Circuit::Resources::Session.all
+      result = Circuit::Resources::RtcSession.all
 
       expect(result.count).to eq(1)
 
