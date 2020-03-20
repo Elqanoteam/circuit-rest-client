@@ -19,7 +19,7 @@ module Circuit
           raise NotImplementedError
         end
 
-        def get(id)
+        def find(id)
           result = Circuit::Utils::Connection.new("#{api_resource}/#{id}").get
           response_to_object(result)
         end

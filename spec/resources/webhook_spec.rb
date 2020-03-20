@@ -22,9 +22,9 @@ describe Circuit::Resources::Webhook do
     end
   end
 
-  describe '.get' do
+  describe '.find' do
     it 'retrieves the a webhook' do
-      webhook = Circuit::Resources::Webhook.get('8b637a4d-75e3-445a-88ea-01979d4008ef')
+      webhook = Circuit::Resources::Webhook.find('8b637a4d-75e3-445a-88ea-01979d4008ef')
 
       expect(webhook.id).to eq('8b637a4d-75e3-445a-88ea-01979d4008ef')
       expect(webhook.user_id).to eq('d8c17f9d-df42-4045-91b5-160c108e86e7')
