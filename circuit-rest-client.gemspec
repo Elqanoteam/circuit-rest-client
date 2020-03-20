@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = 'Wrapper of the Circuit Rest API'
   s.authors     = ['Vincent Pochet']
   s.email       = 'vincent@elqano.com'
-  s.files       = ['lib/circuit.rb']
+  s.files       = ['lib/circuit_api.rb']
   s.license     = 'MIT'
 
   s.add_development_dependency 'bundler', '~> 1.7'
