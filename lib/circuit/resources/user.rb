@@ -21,7 +21,7 @@ module Circuit
           response_to_object(result)
         end
 
-        def find_by_email(email)
+        def find_by_email(email, params = {})
           result = Circuit::Utils::Connection.new(
             "#{api_resource}/#{email}/getUserByEmail",
             Circuit::Utils::Attributes.camelize_keys(params)
