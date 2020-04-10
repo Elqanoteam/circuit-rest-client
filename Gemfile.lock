@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    circuit-api (0.0.8)
+    circuit-api (0.0.9)
 
 GEM
   remote: http://rubygems.org/
