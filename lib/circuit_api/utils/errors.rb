@@ -1,14 +1,15 @@
 module CircuitApi
   class HttpError < StandardError
-    attr_reader :error_code, :error_body
+    attr_reader :error_code, :error_body, :uri
 
-    def initialize(code, body)
+    def initialize(code, body, uri)
       @error_code = code
       @error_body = body
+      @uri = uri
     end
 
     def message
-      "HTTP #{error_code}. Error: #{error_body}"
+      "HTTP #{error_code} - URI: #{uri}.\n Error: #{error_body}"
     end
   end
 

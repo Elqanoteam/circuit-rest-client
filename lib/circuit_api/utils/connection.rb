@@ -72,7 +72,7 @@ module CircuitApi
           CircuitApi::HttpError
         end
 
-        raise error_class.new(response.code, response.body)
+        raise error_class.new(response.code, response.body, uri)
       end
     end
   end
