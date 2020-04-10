@@ -2,7 +2,7 @@ module CircuitApi
   module Resources
     class Message < Base
       def api_resource
-        'conversations/:id/message'
+        'conversations/:id/messages'
       end
 
       def create(conversation_id, params)

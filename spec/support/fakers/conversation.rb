@@ -7,7 +7,7 @@ class CircuitFaker < Sinatra::Base
     end
   end
 
-  post '/rest/v2/conversations/:id/message' do
+  post '/rest/v2/conversations/:id/messages' do
     json_response(200, 'messages/message')
   end
 end
