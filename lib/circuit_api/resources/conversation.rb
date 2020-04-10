@@ -6,7 +6,16 @@ module CircuitApi
       end
 
       def create_direct(participant)
-        result = connection("#{api_resource}/direct", participant: participant).post
+        result = nil
+
+        begin
+          result = connection("#{api_resource}/direct", participant: participant).post
+        rescue CircuitApi::HttpError => e
+          raise unless e.error_code.to_i == 409
+
+          result = JSON.parse(e.error_body)
+        end
+
         response_to_object(result)
       end
     end

@@ -10,9 +10,11 @@ class CircuitFaker < Sinatra::Base
     error = env['sinatra.error']
     url = request.url
     backtrace = "Application error\n#{error}\n#{error.backtrace.join("\n")}"
+
     {
       message: error.message,
       path: url,
+      params: params,
       timestamp: Time.new,
       backtrace: backtrace
     }.to_json
@@ -27,6 +29,7 @@ class CircuitFaker < Sinatra::Base
     {
       message: error.message,
       path: url,
+      params: params,
       timestamp: Time.new,
       backtrace: backtrace
     }.to_json

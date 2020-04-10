@@ -1,0 +1,18 @@
+{
+  "type": "string",
+  "convId": "00000000-3333-1111-2222-777777777777",
+  "participants": [
+    "00000000-3333-1111-2222-777777777777"
+  ],
+  "topic": "string",
+  "topicPlaceholder": "string",
+  "isModerated": true,
+  "creationTime": 0,
+  "modificationTime": 0,
+  "creatorId": "string",
+  "creatorTenantId": "string",
+  "avatar": "string",
+  "avatarLarge": "string",
+  "description": "string",
+  "isGuestAccessDisabled": true
+}
