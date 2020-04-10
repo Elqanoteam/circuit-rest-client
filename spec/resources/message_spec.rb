@@ -14,5 +14,20 @@ describe CircuitApi::Resources::Message do
       expect(label.conv_id).to eq('2031b5d9-a391-4004-b6a7-d26bea128e51')
       expect(label.item_id).to eq('2031b5d9-a391-4004-b6a7-d26bea128e51')
     end
+
+    context 'with item_id' do
+      it 'creates a message in the item' do
+        label = resource.create(
+          '2031b5d9-a391-4004-b6a7-d26bea128e51',
+          {
+            item_id: '00000000-3333-1111-2222-777777777777',
+            content: 'Hello from API!'
+          }
+        )
+
+        expect(label.conv_id).to eq('2031b5d9-a391-4004-b6a7-d26bea128e51')
+        expect(label.item_id).to eq('00000000-3333-1111-2222-777777777777')
+      end
+    end
   end
 end

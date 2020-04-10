@@ -6,10 +6,13 @@ module CircuitApi
       end
 
       def create(conversation_id, params)
-        result = connection(
-          api_resource.sub(':id', conversation_id),
-          params
-        ).post
+        path = api_resource.sub(':id', conversation_id)
+
+        if CircuitApi::Utils::Object.present?(params[:item_id])
+          path = "#{path}/#{params.delete(:item_id)}"
+        end
+
+        result = connection(path, params).post
         response_to_object(result)
       end
     end

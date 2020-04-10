@@ -1,0 +1,71 @@
+{
+  "type": "string",
+  "itemId": "00000000-3333-1111-2222-777777777777",
+  "convId": "2031b5d9-a391-4004-b6a7-d26bea128e51",
+  "attachments": [
+    {
+      "fileId": "string",
+      "fileName": "string",
+      "mimeType": "string",
+      "size": 0,
+      "itemId": "string",
+      "creationTime": 0,
+      "modificationTime": 0,
+      "creatorId": "string",
+      "url": "string",
+      "deleteUrl": "string"
+    }
+  ],
+  "system": {
+    "type": "string",
+    "oldTopic": "string",
+    "newTopic": "string",
+    "affectedParticipants": [
+      "string"
+    ]
+  },
+  "text": {
+    "parentId": "string",
+    "state": "string",
+    "contentType": "string",
+    "subject": "string",
+    "content": "string",
+    "preview": {
+      "srcURL": "string",
+      "type": "string",
+      "title": "string",
+      "imageURI": "string"
+    },
+    "likedUserIds": [
+      "string"
+    ],
+    "formMetaData": "string",
+    "isWebhookMessage": true
+  },
+  "rtc": {
+    "type": "string",
+    "missed": "string",
+    "moved": {
+      "direction": "string",
+      "conversationId": "string"
+    },
+    "ended": {
+      "duration": 0,
+      "maxNumberOfAttendees": 0,
+      "pickFromParticipant": "string"
+    },
+    "rtcParticipants": [
+      {
+        "type": "string",
+        "userId": "string",
+        "displayName": "string",
+        "phoneNumber": "string",
+        "fullyQualifiedNumber": "string"
+      }
+    ]
+  },
+  "creationTime": 0,
+  "modificationTime": 0,
+  "creatorId": "string",
+  "includeInUnreadCount": true
+}
