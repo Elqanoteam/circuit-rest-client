@@ -1,11 +1,12 @@
 module CircuitApi
   class Client
-    attr_accessor :client_id, :client_secret, :sandbox, :token
+    attr_accessor :client_id, :client_secret, :sandbox, :instance_url, :token
 
-    def initialize(client_id: nil, client_secret: nil, sandbox: nil)
+    def initialize(client_id: nil, client_secret: nil, sandbox: nil, instance_url: nil)
       @client_id = client_id
       @client_secret = client_secret
       @sandbox = sandbox
+      @instance_url = instance_url
     end
 
     def connect(token)
@@ -14,6 +15,7 @@ module CircuitApi
     end
 
     def base_url
+      return instance_url if instance_url
       return CircuitApi::API_SANDBOX_BASE_URL if sandbox
 
       CircuitApi::API_BASE_URL

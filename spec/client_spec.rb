@@ -17,6 +17,12 @@ describe CircuitApi::Client do
 
       it { expect(client.base_url).to eq('https://circuitsandbox.net/') }
     end
+
+    context 'when instance_url is provided' do
+      before { client.instance_url = 'https://foo.bar/' }
+
+      it { expect(client.base_url).to eq('https://foo.bar/') }
+    end
   end
 
   describe '.api_url' do
