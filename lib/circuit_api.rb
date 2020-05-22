@@ -21,7 +21,7 @@ require 'circuit_api/resources/user'
 require 'circuit_api/resources/webhook'
 
 module CircuitApi
-  API_BASE_URL = 'https://www.circuit.com/'.freeze
+  API_BASE_URL = 'https://eu.yourcircuit.com/'.freeze
   API_SANDBOX_BASE_URL = 'https://circuitsandbox.net/'.freeze
   API_PATH_BASE = 'rest/v2/'.freeze
 

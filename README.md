@@ -1,6 +1,6 @@
 # Circuit REST API Ruby client
 
-Wrapper of the Circuit Rest API
+Wrapper for the [Unify Circuit](https://www.circuit.com/) Rest API
 
 ## Circuit Documentation
 
@@ -28,7 +28,8 @@ require 'circuit_api'
 CircuitApi::Client.new(
     client_id: 'client id',
     client_secret: 'client secret',
-    sandbox: true
+    sandbox: true,
+    instance_url: 'https://eu.yourcircuit.com/'
 )
 
 client.connect('oauth token')

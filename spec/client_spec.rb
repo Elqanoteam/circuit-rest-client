@@ -10,7 +10,7 @@ describe CircuitApi::Client do
   end
 
   describe '.base_url' do
-    it { expect(client.base_url).to eq('https://www.circuit.com/') }
+    it { expect(client.base_url).to eq('https://eu.yourcircuit.com/') }
 
     context 'when in sandbox' do
       before { client.sandbox = true }
@@ -26,7 +26,7 @@ describe CircuitApi::Client do
   end
 
   describe '.api_url' do
-    it { expect(client.api_url).to eq(URI('https://www.circuit.com/rest/v2/')) }
+    it { expect(client.api_url).to eq(URI('https://eu.yourcircuit.com/rest/v2/')) }
 
     context 'when in sandbox' do
       before { client.sandbox = true }
