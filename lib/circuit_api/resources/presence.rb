@@ -1,6 +1,12 @@
 module CircuitApi
   module Resources
     class Presence < Base
+      AVAILABLE = 'AVAILABLE'.freeze
+      OFFLINE = 'OFFLINE'.freeze
+      BUSY = 'BUSY'.freeze
+      DND = 'DND'.freeze
+      AWAY = 'AWAY'.freeze
+
       def api_resource
         'users'
       end

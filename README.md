@@ -40,7 +40,7 @@ client.connect('oauth token')
 Query for the list of webhooks:
 
 ```ruby
-webhooks =  client.webhooks.all
+webhooks = client.webhooks.all
 webhooks.first.id
 ```
 
