@@ -1,6 +1,11 @@
 module CircuitApi
   module Resources
     class Webhook < Base
+      CONVERSATION_CREATE = 'CONVERSATION.CREATE'.freeze
+      CONVERSATION_UPDATE 'CONVERSATION.UPDATE'.freeze
+      CONVERSATION_ADD_ITEM = 'CONVERSATION.ADD_ITEM'.freeze
+      CONVERSATION_UPDATE_ITEM = 'CONVERSATION.UPDATE_ITEM'.freeze
+
       def api_resource
         'webhooks'
       end

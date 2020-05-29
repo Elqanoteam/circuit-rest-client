@@ -4,7 +4,9 @@ Wrapper for the [Unify Circuit](https://www.circuit.com/) Rest API
 
 ## Circuit Documentation
 
-See the [circuit documentation](https://circuit.github.io/).
+See
+- [Unify Circuit documentation](https://circuit.github.io/)
+- [REST API V2 Swagger](https://circuitsandbox.net/rest/v2/swagger/ui/index.html)
 
 ### Requirements
 
@@ -28,7 +30,7 @@ require 'circuit_api'
 CircuitApi::Client.new(
     client_id: 'client id',
     client_secret: 'client secret',
-    sandbox: true,
+    sandbox: false,
     instance_url: 'https://eu.yourcircuit.com/'
 )
 
