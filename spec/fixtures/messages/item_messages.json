@@ -1,0 +1,17 @@
+[
+  {
+    "type": "TEXT",
+    "itemId": "00000000-3333-1111-2222-777777777777",
+    "convId": "2031b5d9-a391-4004-b6a7-d26bea128e51",
+    "text": {
+      "state": "CREATED",
+      "subject": "Avec un titre",
+      "content": "et un contenu",
+      "isWebhookMessage": false
+    },
+    "creationTime": 1591862121321,
+    "modificationTime": 1591862121321,
+    "creatorId": "a0ad8c89-d89f-4d1b-a0e4-61fa3f87b1d4",
+    "includeInUnreadCount": true
+  }
+]

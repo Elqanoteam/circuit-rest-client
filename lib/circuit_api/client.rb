@@ -37,6 +37,10 @@ module CircuitApi
       CircuitApi::Resources::Message.new(self)
     end
 
+    def message_items
+      CircuitApi::Resources::MessageItem.new(self)
+    end
+
     def presence
       CircuitApi::Resources::Presence.new(self)
     end
