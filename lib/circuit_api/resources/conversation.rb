@@ -1,6 +1,11 @@
 module CircuitApi
   module Resources
     class Conversation < Base
+      DIRECT = 'DIRECT'.freeze
+      GROUP = 'GROUP'.freeze
+      COMMUNITY = 'COMMUNITY'.freeze
+      LARGE = 'LARGE'.freeze
+
       def api_resource
         'conversations'
       end

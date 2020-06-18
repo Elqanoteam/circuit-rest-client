@@ -1,6 +1,12 @@
 module CircuitApi
   module Resources
     class User < Base
+      REGULAR = 'REGULAR'.freeze
+      MODERATOR = 'MODERATOR'.freeze
+      GUEST = 'GUEST'.freeze
+      FORMER = 'FORMER'.freeze
+      BOT = 'BOT'.freeze
+
       def api_resource
         'users'
       end
