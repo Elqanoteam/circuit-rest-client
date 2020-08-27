@@ -5,6 +5,7 @@ module CircuitApi
       CONVERSATION_UPDATE = 'CONVERSATION.UPDATE'.freeze
       CONVERSATION_ADD_ITEM = 'CONVERSATION.ADD_ITEM'.freeze
       CONVERSATION_UPDATE_ITEM = 'CONVERSATION.UPDATE_ITEM'.freeze
+      USER_SUBMIT_FORM = 'USER.SUBMIT_FORM_DATA'.freeze
 
       def api_resource
         'webhooks'
