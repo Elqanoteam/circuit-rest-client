@@ -1,11 +1,16 @@
 module CircuitApi
   module Resources
     class User < Base
+      # Participant type
       REGULAR = 'REGULAR'.freeze
       MODERATOR = 'MODERATOR'.freeze
       GUEST = 'GUEST'.freeze
       FORMER = 'FORMER'.freeze
       BOT = 'BOT'.freeze
+
+      # User stase
+      ACTIVE_STATE = 'ACTIVE'.freeze
+      DELETED_STATE = 'DELETED'.freeze
 
       def api_resource
         'users'
