@@ -11,6 +11,10 @@ module CircuitApi
     def message
       "HTTP #{error_code} - URI: #{uri}.\n Error: #{error_body}"
     end
+
+    def json_message
+      JSON.parse(error_body)
+    end
   end
 
   class BadRequest < HttpError; end;
