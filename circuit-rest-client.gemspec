@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.description = 'Wrapper of the Circuit Rest API'
   s.authors     = ['Vincent Pochet']
   s.email       = 'vincent@elqano.com'
+  s.homepage    = 'https://github.com/Elqanoteam/circuit-rest-client'
   s.license     = 'MIT'
 
   s.files         = `git ls-files lib`.split("\n")
@@ -17,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'bundler', '~> 1.7'
   s.add_development_dependency 'rspec', '~> 3.1'
-  s.add_development_dependency 'byebug'
-  s.add_development_dependency 'webmock'
-  s.add_development_dependency 'sinatra'
+  s.add_development_dependency 'byebug', '~> 11.1.3'
+  s.add_development_dependency 'webmock', '~> 3.10.0'
+  s.add_development_dependency 'sinatra', '~> 2.1.0'
 end
