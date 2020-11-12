@@ -8,7 +8,11 @@ class CircuitFaker < Sinatra::Base
   end
 
   post '/rest/v2/conversations/:id/messages' do
-    json_response(200, 'messages/message')
+    if params[:id] == '00000000-3333-1111-2222-777777777777'
+      json_response(400, 'messages/validation_errors')
+    else
+      json_response(200, 'messages/message')
+    end
   end
 
   post '/rest/v2/conversations/:id/messages/:item_id' do

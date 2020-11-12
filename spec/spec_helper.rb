@@ -4,7 +4,7 @@ Bundler.setup
 require 'circuit_api'
 require 'webmock/rspec'
 require 'sinatra'
-require 'pry'
+require 'byebug'
 
 Dir.glob(File.expand_path('../support/**/*.rb', __FILE__), &method(:require))
 

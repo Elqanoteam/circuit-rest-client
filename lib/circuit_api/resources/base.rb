@@ -68,6 +68,13 @@ module CircuitApi
         #binding.pry
         CircuitApi::Resource.new('foo', attributes)
       end
+
+      def handle_validation_errors(bad_request_error)
+        errors = bad_request_error.json_message['validationErrors']
+        raise unless errors
+
+        raise CircuitApi::ValidationError.new(errors, bad_request_error.uri)
+      end
     end
   end
 end

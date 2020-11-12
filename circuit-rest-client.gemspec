@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'bundler', '~> 1.7'
   s.add_development_dependency 'rspec', '~> 3.1'
-  s.add_development_dependency 'pry', '~> 0.10'
+  s.add_development_dependency 'byebug'
   s.add_development_dependency 'webmock'
   s.add_development_dependency 'sinatra'
 end

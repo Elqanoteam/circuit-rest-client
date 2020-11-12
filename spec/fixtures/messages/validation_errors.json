@@ -1,0 +1,7 @@
+{
+  "errorDescription": "the request contains invalid data",
+  "validationErrors": [
+    "One or more user do not exist."
+  ],
+  "errorCode": "400"
+}

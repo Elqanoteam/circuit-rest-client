@@ -14,6 +14,9 @@ module CircuitApi
 
         result = connection(path, params).post
         response_to_object(result)
+
+      rescue CircuitApi::BadRequest => e
+        handle_validation_errors(e)
       end
     end
   end

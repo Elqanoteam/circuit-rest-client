@@ -1,4 +1,5 @@
 module CircuitApi
+  # Network Errors
   class HttpError < StandardError
     attr_reader :error_code, :error_body, :uri
 
@@ -21,4 +22,18 @@ module CircuitApi
   class Unauthorized < HttpError; end;
   class InternalServerError < HttpError; end;
   class ServiceUnavailable < HttpError; end;
+
+  # Data errors
+  class ValidationError < StandardError
+    attr_reader :errors, :uri
+
+    def initialize(errors, uri)
+      @errors = errors
+      @uri = uri
+    end
+
+    def message
+      "URI: #{uri}.\n Errors: #{errors}"
+    end
+  end
 end
