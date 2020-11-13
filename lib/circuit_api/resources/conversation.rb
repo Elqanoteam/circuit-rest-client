@@ -22,6 +22,8 @@ module CircuitApi
         end
 
         response_to_object(result)
+      rescue CircuitApi::BadRequest => e
+        handle_validation_errors(e)
       end
     end
   end
