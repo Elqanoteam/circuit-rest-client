@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec', '~> 3.1'
   s.add_development_dependency 'byebug', '~> 11.1.3'
   s.add_development_dependency 'webmock', '~> 3.10.0'
-  s.add_development_dependency 'sinatra', '~> 2.1.0'
+  s.add_development_dependency 'sinatra', '~> 3.0.4'
 end
